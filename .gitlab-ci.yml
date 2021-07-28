@@ -19,7 +19,7 @@ test:
 step-deploy-prod:
     stage: deploy
     only:
-        - new
+        - master
     script:
         - sudo apt-get install -y python pip 
         - pip install docker-compose
