@@ -10,12 +10,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id','owner', 'username', 'articles', 'url']
+        fields = ['id', 'owner', 'username', 'articles', 'url']
 
 
 class ArticleSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-
 
     class Meta:
         model = Article

@@ -10,11 +10,7 @@ class Article(models.Model):
     owner = models.ForeignKey('auth.User', related_name='articles', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
-
+        return self.author
 
     def save(self, *args, **kwargs):
         super(Article, self).save(*args, **kwargs)
-
-
-

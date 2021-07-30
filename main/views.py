@@ -1,21 +1,18 @@
 import django_filters
+from rest_framework import viewsets
+from rest_framework import permissions, generics
+from rest_framework import renderers
 from .models import Article
 from .serializers import ArticleSerializer, UserSerializer
-from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth.models import User
-from main.serializers import UserSerializer
-from rest_framework import permissions, generics
-from main.permissions import IsOwnerOrReadOnly
-from rest_framework import filters
+from .permissions import IsOwnerOrReadOnly
+from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
+from django.contrib.auth.models import User
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework.reverse import reverse
-from rest_framework import renderers
-from rest_framework.response import Response
-
+from rest_framework import filters
 
 
 class ArticleViewSet(viewsets.ModelViewSet):
