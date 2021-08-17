@@ -1,22 +1,21 @@
 from rest_framework import serializers
 from .models import Article
-from django.contrib.auth.models import User
+from users.models import MyUser
 
 
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    articles = serializers.HyperlinkedRelatedField(many=True, view_name='article-detail', read_only=True)
-    owner = serializers.ReadOnlyField(source='owner.username')
-
-    class Meta:
-        model = User
-        fields = ['id', 'owner', 'username', 'articles', 'url']
-
-
-class ArticleSerializer(serializers.HyperlinkedModelSerializer):
+class ArticleSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Article
         fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    articles = ArticleSerializer(many=True, read_only=True)
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = MyUser
+        fields = ['id', 'owner', 'username', 'articles', 'profile_pic']
 
