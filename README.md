@@ -22,7 +22,13 @@ that app you can find from this [link](http://dj-dj.herokuapp.com/)
 </div>
 <hr>
 
-##Tutorial for beginners like me
+<b>
+<h2>
+
+Tutorial for beginners like me
+</h2>
+
+</b>
 
 
 
@@ -66,12 +72,21 @@ First of all we need to install all packpages.
 </ul> 
 
 Create virtualenv, start project, build docker image, register on heroku , deploy your image on heroku and <b>oowoalya
-u created simple site</b>
+you created simple site</b>
 
 <br>
 </details>
 
-##Support
+<b>
+<h2>
+
+Support
+</h2>
+</b>
+
+
+
+
 
 <details>
 <summary>contact us
@@ -84,8 +99,16 @@ u created simple site</b>
 
 [Have problem ?](http://that-not-my-problem.com/)
 <br>
+</details>
+<br>
 
-##License
+<b>
+<h2>
+
+License
+</h2>
+</b>
+
 [license](http://i-don't-have-license.com/)
 
 
