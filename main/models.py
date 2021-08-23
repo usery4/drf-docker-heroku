@@ -3,6 +3,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
+    photo = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey('users.MyUser', related_name='articles', on_delete=models.CASCADE)
 
